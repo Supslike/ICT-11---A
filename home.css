@@ -113,7 +113,7 @@
     display: flex;
     margin-left: 0.5in;
     align-items: center;
-    margin-bottom: 0.08in;
+    margin-bottom: 5px;
 }
 
 .sub {

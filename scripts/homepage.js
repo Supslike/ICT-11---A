@@ -14,6 +14,8 @@ let TEMP_TOM = 0
 
 let ASSIGNMENT;
 let ID_ASS;
+let TODAY_DUE = [];
+let TOMORROW_DUE = []
 
 let WORKLOAD = 0;
 let DUE = 0;
@@ -51,7 +53,7 @@ function UpdateStats() {
             for (let i = 0; i < checked_data.length; i++) {
                 TEMP_DONE += 1
                 if (checked_data[i].includes("due")) {
-                    TEMP_DUE += 1
+                    TEMP_DUE += 1;
                 }
 
                 else if (checked_data[i].includes("tom")) {
@@ -75,7 +77,7 @@ function UpdateStats() {
                             DONE += 1;
                             WORKLOAD -= 1;
                             if (inputs[index].id.includes("due")) {
-                                DUE -= 1
+                                DUE -= 1;
                             }
                             if (inputs[index].id.includes("tom")) {
                                 TOM -= 1;
@@ -232,7 +234,19 @@ for (let i = 0; i < categories.length; i++) {
         if (categories[i].id.toUpperCase() === "ALL") {
             let final = ""
             for (let keys in ASSIGNMENT) {
+                console.log(keys)
                 final += GenerateAssignments(ASSIGNMENT[keys], keys)
+            }
+            list_container.innerHTML = final;
+        }
+
+        else if (categories[i].id.toUpperCase() === "DUE") {
+            let final = ""
+            for (let i = 0; i < TODAY_DUE.length; i++) {
+                final += GenerateAssignments(TODAY_DUE[i]["data"], TODAY_DUE[i]["key"])
+            }
+            for (let i = 0; i < TOMORROW_DUE.length; i++) {
+                final += GenerateAssignments(TOMORROW_DUE[i]["data"], TOMORROW_DUE[i]["key"])
             }
             list_container.innerHTML = final;
         }
@@ -262,4 +276,28 @@ document.addEventListener("DOMContentLoaded", async function() {
     MAX_WORKLOAD = WORKLOAD;
     MAX_DUE = DUE
     UpdateStats()
+
+    const inputs = document.querySelectorAll("input");
+    for (let i = 0; i < inputs.length; i++) {
+        if(inputs[i].id.includes("due")) {
+            var idx = 0
+            for (let o = 0; o < Object.keys(ASSIGNMENT).length; o++) {
+                if (idx === Number(inputs[i].id.replace(" due", ""))) {
+                    TODAY_DUE.push(ASSIGNMENT[Object.keys(ASSIGNMENT)[o]])
+                    break
+                }
+                idx += 1 
+            }
+        }
+        if(inputs[i].id.includes("tom")) {
+            var idx = 0
+            for (let o = 0; o < Object.keys(ASSIGNMENT).length; o++) {
+                if (idx === Number(inputs[i].id.replace(" tom", ""))) {
+                    TOMORROW_DUE.push({"key":Object.keys(ASSIGNMENT)[o], "data":ASSIGNMENT[Object.keys(ASSIGNMENT)[o]]})
+                    break
+                }
+                idx += 1 
+            }
+        }
+    }
 })
