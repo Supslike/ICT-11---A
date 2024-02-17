@@ -6,7 +6,8 @@ async function DownloadImage(url) {
             reader.onload = function() {
                 const imageDataUrl = reader.result;
                 localStorage.setItem("ICT_PFP", imageDataUrl);
-                localStorage.setItem("ICT_INPUTS", [])
+                localStorage.setItem("ICT_INPUTS", JSON.stringify([]))
+                localStorage.setItem("ICT_UPDATE", JSON.stringify(""))
             };
             reader.readAsDataURL(blob);
         })
