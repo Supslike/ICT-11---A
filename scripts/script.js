@@ -13,6 +13,8 @@ const FACEBOOK_ACCOUNTS = {
     "ISABELA_MIRANDA": {"url": "https://www.facebook.com/isabela.miranda.547389", "name": "isabela.miranda.547389", "cookies": 1},
     "MIKAELLA_CARBONELL": {"url": "https://www.facebook.com/miks.xieee", "name": "miks.xieee", "cookies": 1},
     "MARVILYN_FRIAS": {"url": "https://www.facebook.com/FMarvs", "name": "FMarvs", "cookies": 1},
+    "LARRY_JAY_PAGULAYAN": {"url": "https://www.facebook.com/larryjaytamayo.pagulayan", "name": "larryjaytamayo.pagulayan", "cookies": 1},
+    "JAMES_OLAYBAL": {"url": "https://www.facebook.com/profile.php?id=100046657927556", "name": "100046657927556", "cookies": 1},
     "MARY_JHANE_OLANO": {"url": "https://www.facebook.com/jin.jxn027", "name": "jin.jxn027", "cookies": 1},
     "VONJO_MARC_TINGSON": {"url": "https://www.facebook.com/vonjomarc.tingson", "name": "vonjomarc.tingson", "cookies": 1},
     "JOHN_DAVID_ANSIGBAT": {"url": "https://www.facebook.com/David.Ansigbat.10", "name": "David.Ansigbat.10", "cookies": 2},

@@ -8,6 +8,7 @@ async function DownloadImage(url) {
                 localStorage.setItem("ICT_PFP", imageDataUrl);
                 localStorage.setItem("ICT_INPUTS", JSON.stringify([]))
                 localStorage.setItem("ICT_UPDATE", JSON.stringify(""))
+                localStorage.setItem("ICT_DATA", JSON.stringify({}))
             };
             reader.readAsDataURL(blob);
         })
@@ -63,6 +64,7 @@ async function LoadAssignments() {
             var cur_date = `${monthNames[time_check.getMonth()]} ${time_check.getDate()}, ${timeString}`
             localStorage.setItem("ICT_UPDATE", JSON.stringify(cur_date))
             document.getElementById("last_update").textContent = `Last Updated: ${cur_date}`;
+            console.log("sugo")
         }
         localStorage.removeItem("ICT_TEMP");
         return data; 
