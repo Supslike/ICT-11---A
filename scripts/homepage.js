@@ -63,7 +63,7 @@ function UpdateStats() {
             WORKLOAD = MAX_WORKLOAD - TEMP_WORKLOAD
             DUE = MAX_DUE - TEMP_DUE
             TOM = MAX_TOM - TEMP_TOM
-            document.getElementById("description").innerHTML = `<span class="material-symbols-outlined" style="color: red;">description</span>You have <b>${DUE}</b> works due today! <br> <br><span class="material-symbols-outlined" style="color: orange;">Newspaper</span><b>${WORKLOAD}</b> assigned task! <br> <br> <span class="material-symbols-outlined" style="color: green;">check</span><b>${DONE}</b> finished tasks!`;
+            document.getElementById("description").innerHTML = `<span class="material-symbols-outlined" style="color: red;">description</span><b>${DUE}</b> works due today, <b>${TOM}</b> due tomorrow! <br> <br><span class="material-symbols-outlined" style="color: orange;">Newspaper</span><b>${WORKLOAD}</b> assigned task! <br> <br> <span class="material-symbols-outlined" style="color: green;">check</span><b>${DONE}</b> finished tasks!`;
 
             const inputs = document.querySelectorAll("input");
             const labels = document.querySelectorAll("label");

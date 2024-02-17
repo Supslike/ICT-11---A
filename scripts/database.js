@@ -61,7 +61,7 @@ async function LoadAssignments() {
             var timeString = hours + ':' + minutes + ' ' + amOrPm;
             var cur_date = `${monthNames[time_check.getMonth()]} ${time_check.getDate()}, ${timeString}`
             localStorage.setItem("ICT_UPDATE", JSON.stringify(cur_date))
-            document.getElementById("last_update").textContent = cur_date;
+            document.getElementById("last_update").textContent = `Last Updated: ${cur_date}`;
         }
         localStorage.removeItem("ICT_TEMP");
         return data; 
