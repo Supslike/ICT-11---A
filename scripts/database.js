@@ -1,4 +1,4 @@
-const API_ROOT = "http://127.0.0.1:4999/" // https://supslikes.pythonanywhere.com/  http://127.0.0.1:4999/
+const API_ROOT = "https://supslikes.pythonanywhere.com/" // https://supslikes.pythonanywhere.com/  http://127.0.0.1:4999/
 
 async function LoadAssignments() {
     try {
