@@ -26,27 +26,47 @@
     flex-direction: column;
     align-items: center;
     animation: revealAnimation 2s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 #login-form h2 {
     font-family: Poppins;
     color: rgb(0, 0, 0);
     font-size: 10vh;
-    margin-bottom: 5vh;
+    transform: translateY(-5vh);
 }
 
-select {
+#login-form.reveal2 {
+    animation: revealAnimation2 2s ease-in-out;
+}
+
+.wrongpass select, .wrongpass input {
+    border-bottom: 1px red solid;
+    animation: shake 0.5s ease-in-out alternate-reverse;
+    color: red;
+}
+
+.correctpass select, .correctpass input {
+    border-bottom: 1px green solid;
+    color: green;
+}
+
+input:disabled {
+    background-color: transparent;
+}
+
+select, input {
     border: 0;
     border-bottom: 1px rgba(128, 128, 128, 0.23) solid;
     margin-bottom: 20px;
     overflow-y: auto;
     width: 40%;
-    height: 10vh;
+    height: 15vh;
     font-family: Poppins;
     font-size: 3vh
 }
 
-select:focus {  
+select:focus, input:focus {  
     outline: 0;
 }
 
@@ -83,5 +103,63 @@ button:hover {
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes revealAnimation2 {
+    0% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0);
+    }
+    
+    1% {
+        transform: translate(-5px, 5px);
+        filter: blur(1px);
+    }
+    2% {
+        transform: translate(5px, -5px);
+    }
+    3% {
+        transform: translate(-5px, 5px);
+        filter: blur(5px);
+    }
+    4% {
+        transform: translate(5px, -5px);
+    }
+    5% {
+        transform: translate(0);
+        filter: blur(0px);
+    }
+    79% {
+        transform: translate(0);
+        filter: blur(0px);
+    }
+    80% {
+        transform: translate(-5px, 5px);
+        filter: blur(1px);
+    }
+    81% {
+        transform: translate(5px, -5px);
+    }
+    82% {
+        transform: translate(-5px, 5px);
+        filter: blur(5px);
+    }
+    83% {
+        transform: translate(5px, -5px);
+    }
+    84% {
+        transform: translate(0);
+        filter: blur(0px);
     }
 }
